@@ -1,0 +1,9 @@
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Simple Feishu Text
+        run: |
+          curl -X POST -H "Content-Type: application/json" \
+          -d '{"text": "Hello from GitHub Actions (Simple Test)"}' \
+          ${{ secrets.FEISHU_WEBHOOK_URL }}
